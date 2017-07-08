@@ -1,0 +1,14 @@
+{
+  "name": "api-restful-favorito",
+  "version": "1.0.0",
+  "description": "API restful project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jlsicajan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3" //si le ponemos * descarga el mas reciente cuando le damos npm update
+  }
+}
