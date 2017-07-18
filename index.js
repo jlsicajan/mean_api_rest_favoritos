@@ -9,8 +9,8 @@ var port = process.env.PORT || 3678
 
 app.use(body_parser.urlencoded({extended:false}));
 app.use(body_parser.json());
-
-app.get('/prueba/:nombre_parametro?', function(request, response){ //al ponerle el signo de interrogacion le dice que no es obligatorio el parametro
+                                        //funcion de tipo flecha (request, response) => {
+app.get('/prueba/:nombre_parametro?', function(request, response) { //al ponerle el signo de interrogacion le dice que no es obligatorio el parametro
 
     if(request.params.nombre_parametro){
         var nombre = request.params.nombre_parametro;
