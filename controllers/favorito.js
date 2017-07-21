@@ -20,7 +20,19 @@ function prueba(request, response) { //al ponerle el signo de interrogacion le d
 function getFavorito(request, response){ //get
     var favorit_id = request.params.id;
 
-    response.status(200).send({data: favorit_id});
+    favorito_model.findById(favorit_id, function (err, favorito) {
+        if(err){
+            response.status(500).send({message: 'Error al consultar la db'});
+        }
+
+        if(!favorito){
+            response.status(404).send({message: 'No se encontro ningun favorito'});
+        }
+
+        response.status(200).send({favorito: favorito});
+    });
+
+//    response.status(200).send({data: favorit_id});
 }
 
 
