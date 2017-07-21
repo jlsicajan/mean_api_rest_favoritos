@@ -8,6 +8,7 @@ var api = express.Router();
 //funcion de tipo flecha (request, response) => {
 api.get('/prueba/:nombre_parametro?', favorito_controller.prueba);
 api.get('/favorito/:id?', favorito_controller.getFavorito);
+api.get('/favoritos', favorito_controller.getFavoritos);
 api.post('/favorito', favorito_controller.saveFavorito);
 api.put('/favorito', favorito_controller.updateFavorito);
 api.delete('/favorito/:id', favorito_controller.deleteFavorito);

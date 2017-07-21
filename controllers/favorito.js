@@ -25,7 +25,17 @@ function getFavorito(request, response){ //get
 
 
 function getFavoritos(request, response){
+    //primer parametro condiciones, where, etc
+    favorito_model.find({}, function(err, favoritos){
+        if(err){
+            response.status(500).send({message: 'Error al consultar la db'});
+        }
+        if(!favoritos){
+            response.status(404).send({message: 'No se encontraron favoritos'});
+        }
 
+        response.status(200).send({favoritos: favoritos});
+    });
 }
 
 function saveFavorito(request, response){ //POST
