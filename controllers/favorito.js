@@ -1,5 +1,8 @@
 'use strict'
 
+//ya tenemos disponible el objeto del modelo favorito
+var favorito_model = require('../models/favorito');
+
 function prueba(request, response) { //al ponerle el signo de interrogacion le dice que no es obligatorio el parametro
 
     if(request.params.nombre_parametro){
@@ -26,9 +29,23 @@ function getFavoritos(request, response){
 }
 
 function saveFavorito(request, response){ //POST
-    var params = request.body;
+    var favorito = new favorito_model();
 
-    response.status(200).send({favorito: params});
+    var params = request.body;
+    // asignamos cada valor por lo que nos han enviado por POST
+    favorito.title = params.title;
+    favorito.description = params.description;
+    favorito.url = params.url;
+
+    favorito.save(function(err, favsaved){
+        if(err){
+            //500 error en el servidor
+            response.status(500).send({message: 'Error al guardar el favorito'});
+        }
+        response.status(200).send({favorito: favsaved});
+    });
+
+   // response.status(200).send({favorito: params});
 }
 
 function updateFavorito(request, response){// PUT

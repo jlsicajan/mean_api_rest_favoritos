@@ -10,7 +10,7 @@ var port = process.env.PORT || 3678
 
 // url de mongo de base de datos alojada, funcion de callback
 //curos_favoritos es el nombre de la base de datos
-mongoose.createConnection('mongodb://localhost:27017/curso_favoritos', function(err, response){
+mongoose.connect('mongodb://localhost:27017/curso_favoritos', function(err, response){
 
     if(err){
         throw err;
