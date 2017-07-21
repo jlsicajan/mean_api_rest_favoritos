@@ -26,7 +26,7 @@ function getFavorito(request, response){ //get
 
 function getFavoritos(request, response){
     //primer parametro condiciones, where, etc
-    favorito_model.find({}, function(err, favoritos){
+    favorito_model.find({}).sort('-_id').exec(function(err, favoritos){
         if(err){
             response.status(500).send({message: 'Error al consultar la db'});
         }

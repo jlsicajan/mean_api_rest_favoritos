@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26d81ea4-c560-40dd-aa83-921767ec5233" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/favorito.js" afterPath="$PROJECT_DIR$/controllers/favorito.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/favorito.js" afterPath="$PROJECT_DIR$/routes/favorito.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,17 +27,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="favorito.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="favorito.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/favorito.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="80" column="15" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="15" />
+            <state relative-caret-position="200">
+              <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="favorito.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="favorito.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/favorito.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -86,8 +85,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/models/favorito.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/controllers/favorito.js" />
         <option value="$PROJECT_DIR$/routes/favorito.js" />
+        <option value="$PROJECT_DIR$/controllers/favorito.js" />
       </list>
     </option>
   </component>
@@ -285,12 +284,12 @@
       <workItem from="1499830236545" duration="115000" />
       <workItem from="1500347133876" duration="4645000" />
       <workItem from="1500438258622" duration="1782000" />
-      <workItem from="1500615307398" duration="4379000" />
+      <workItem from="1500615307398" duration="4664000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15098000" />
+    <option name="totallyTimeSpent" value="15383000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1368" height="749" extended-state="6" />
@@ -475,18 +474,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/favorito.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="80" column="15" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/favorito.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/favorito.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
           <folding />
         </state>
       </provider>
