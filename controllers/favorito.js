@@ -23,13 +23,14 @@ function getFavorito(request, response){ //get
     favorito_model.findById(favorit_id, function (err, favorito) {
         if(err){
             response.status(500).send({message: 'Error al consultar la db'});
+        }else{
+            if(!favorito){
+                response.status(404).send({message: 'No se encontro ningun favorito'});
+            }else{
+                response.status(200).send({favorito: favorito});
+            }
         }
 
-        if(!favorito){
-            response.status(404).send({message: 'No se encontro ningun favorito'});
-        }
-
-        response.status(200).send({favorito: favorito});
     });
 
 //    response.status(200).send({data: favorit_id});
@@ -41,12 +42,14 @@ function getFavoritos(request, response){
     favorito_model.find({}).sort('-_id').exec(function(err, favoritos){
         if(err){
             response.status(500).send({message: 'Error al consultar la db'});
-        }
-        if(!favoritos){
-            response.status(404).send({message: 'No se encontraron favoritos'});
+        }else{
+            if(!favoritos){
+                response.status(404).send({message: 'No se encontraron favoritos'});
+            }else{
+                response.status(200).send({favoritos: favoritos});
+            }
         }
 
-        response.status(200).send({favoritos: favoritos});
     });
 }
 
@@ -63,8 +66,9 @@ function saveFavorito(request, response){ //POST
         if(err){
             //500 error en el servidor
             response.status(500).send({message: 'Error al guardar el favorito'});
+        }else{
+            response.status(200).send({favorito: favsaved});
         }
-        response.status(200).send({favorito: favsaved});
     });
 
    // response.status(200).send({favorito: params});
@@ -78,10 +82,11 @@ function updateFavorito(request, response){// PUT
         if(err){
             //500 error en el servidor
             response.status(500).send({message: 'Error al actualizar el favorito'});
+        }else{
+            response.status(200).send({
+                update: true,
+                favorito: update});
         }
-        response.status(200).send({
-            update: true,
-            favorito: update});
     });
 
 }
@@ -92,18 +97,18 @@ function deleteFavorito(request, response){ //PUT
     favorito_model.findById(favorit_id, function (err, favorito) {
         if(err){
             response.status(500).send({message: 'Error al consultar la db'});
-        }
-
-        if(!favorito){
-            response.status(404).send({message: 'No se encontro ningun favorito'});
-        }else {
-            favorito.remove(function(err){
-                if(err){
-                    response.status(500).send({message: 'El favorito no se ha borrado'});
-                }else{
-                    response.status(200).send({message: "El favorito se ha eliminado"});
-                }
-            });
+        }else{
+            if(!favorito){
+                response.status(404).send({message: 'No se encontro ningun favorito'});
+            }else {
+                favorito.remove(function(err){
+                    if(err){
+                        response.status(500).send({message: 'El favorito no se ha borrado'});
+                    }else{
+                        response.status(200).send({message: "El favorito se ha eliminado"});
+                    }
+                });
+            }
         }
 
     });
