@@ -71,11 +71,19 @@ function saveFavorito(request, response){ //POST
 }
 
 function updateFavorito(request, response){// PUT
-    var params = request.body;
+    var update = request.body;
+    var favorit_id = request.params.id;
 
-    response.status(200).send({
-        update: true,
-        favorito: params});
+    favorito_model.findByIdAndUpdate(favorit_id, update, function(err, favorito_updated){
+        if(err){
+            //500 error en el servidor
+            response.status(500).send({message: 'Error al actualizar el favorito'});
+        }
+        response.status(200).send({
+            update: true,
+            favorito: update});
+    });
+
 }
 
 function deleteFavorito(request, response){ //PUT
