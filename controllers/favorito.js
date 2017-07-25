@@ -89,10 +89,24 @@ function updateFavorito(request, response){// PUT
 function deleteFavorito(request, response){ //PUT
     var favorit_id = request.params.id;
 
-    response.status(200).send({
-        delete: true,
-        data: favorit_id});
+    favorito_model.findById(favorit_id, function (err, favorito) {
+        if(err){
+            response.status(500).send({message: 'Error al consultar la db'});
+        }
 
+        if(!favorito){
+            response.status(404).send({message: 'No se encontro ningun favorito'});
+        }else {
+            favorito.remove(function(err){
+                if(err){
+                    response.status(500).send({message: 'El favorito no se ha borrado'});
+                }else{
+                    response.status(200).send({message: "El favorito se ha eliminado"});
+                }
+            });
+        }
+
+    });
 }
 
 module.exports = {
